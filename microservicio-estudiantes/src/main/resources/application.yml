@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: micro-estudiantes
+  config:
+    import: optional:configserver:http://localhost:8888

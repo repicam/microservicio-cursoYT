@@ -1,0 +1,22 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: micro-gateway
+  cloud:
+    gateway:
+      mvc:
+        routesMap:
+          estudiantes:
+            uri: http://localhost:8090
+            predicates:
+              - Path=/api/estudiante/**
+          cursos:
+            uri: http://localhost:8091
+            predicates:
+              - Path=/api/curso/**
+
+eureka:
+  client:
+    register-with-eureka: false
